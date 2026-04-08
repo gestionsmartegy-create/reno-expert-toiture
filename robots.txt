@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gestionsmartegy-create.github.io/reno-expert-toiture/sitemap.xml
