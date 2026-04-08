@@ -503,6 +503,23 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   </div>
 </nav>
 
+<!-- Netlify Forms detection (hidden) -->
+<form name="estimation-en" data-netlify="true" netlify-honeypot="bot-field" hidden enctype="multipart/form-data">
+  <input name="bot-field">
+  <input name="methode">
+  <input name="prenom"><input name="nom">
+  <input name="telephone"><input name="courriel">
+  <input name="delai">
+  <input name="adresse">
+  <input name="type-projet"><input name="type-batiment">
+  <input name="type-projet-photo">
+  <input type="file" name="photo-1"><input type="file" name="photo-2">
+  <input type="file" name="photo-3"><input type="file" name="photo-4">
+  <input type="file" name="photo-5"><input type="file" name="photo-6">
+  <input type="file" name="photo-7"><input type="file" name="photo-8">
+  <input type="file" name="photo-9"><input type="file" name="photo-10">
+</form>
+
 <!-- Pages -->
 <div id="page-index"><section class="hero-base">
   <div class="hero-bgimg" style="background-image:url('img/img2.jpg');"></div>
@@ -1485,7 +1502,34 @@ function submitEstim() {
   if (!document.getElementById('est-tel').value.trim()) { alert("Please enter your phone number."); return; }
   if (!document.getElementById('est-email').value.trim()) { alert("Please enter your email address."); return; }
   if (!document.getElementById('est-consent').checked) { alert("Please accept to be contacted to receive your estimate."); return; }
-  goStep(4);
+
+  var btn = document.querySelector('#est-step-3 .btn-r');
+  if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+  var fd = new FormData();
+  fd.append('form-name', 'estimation-en');
+  fd.append('bot-field', '');
+  fd.append('methode', estMethod || '');
+  fd.append('prenom', document.getElementById('est-prenom').value.trim());
+  fd.append('nom', (document.getElementById('est-nom') || {value:''}).value.trim());
+  fd.append('telephone', document.getElementById('est-tel').value.trim());
+  fd.append('courriel', document.getElementById('est-email').value.trim());
+  fd.append('delai', (document.getElementById('est-delai') || {value:''}).value);
+  if (estMethod === 'adresse') {
+    fd.append('adresse', (document.getElementById('est-adresse') || {value:''}).value.trim());
+    fd.append('type-projet', (document.getElementById('est-type-proj') || {value:''}).value);
+    fd.append('type-batiment', (document.getElementById('est-type-bat') || {value:''}).value);
+  } else {
+    fd.append('type-projet-photo', (document.getElementById('est-type-proj-photo') || {value:''}).value);
+    uploadedFiles.forEach(function(file, i) { fd.append('photo-' + (i + 1), file, file.name); });
+  }
+
+  fetch('/', { method: 'POST', body: fd })
+    .then(function() { goStep(4); })
+    .catch(function() {
+      alert("Submission error. Please call us directly.");
+      if (btn) { btn.disabled = false; btn.textContent = 'Send my request ▶'; }
+    });
 }
 
 function resetEstim() {
