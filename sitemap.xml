@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gestionsmartegy-create.github.io/reno-expert-toiture/reno_expert_toiture.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://gestionsmartegy-create.github.io/reno-expert-toiture/reno_expert_toiture.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gestionsmartegy-create.github.io/reno-expert-toiture/reno_expert_toiture_en.html"/>
+    <loc>https://couvreur-renoexpert.com/fr</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://couvreur-renoexpert.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couvreur-renoexpert.com/en"/>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gestionsmartegy-create.github.io/reno-expert-toiture/reno_expert_toiture_en.html</loc>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://gestionsmartegy-create.github.io/reno-expert-toiture/reno_expert_toiture.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gestionsmartegy-create.github.io/reno-expert-toiture/reno_expert_toiture_en.html"/>
+    <loc>https://couvreur-renoexpert.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://couvreur-renoexpert.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couvreur-renoexpert.com/en"/>
     <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>1.0</priority>
   </url>
 </urlset>
