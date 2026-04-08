@@ -39,22 +39,23 @@ img{max-width:100%;display:block;}
 a{text-decoration:none;color:inherit;}
 
 /* ── NAV ─────────────────────────────────────────── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:var(--N);border-bottom:3px solid var(--R);height:70px;display:flex;align-items:center;padding:0 5%;gap:24px;}
-.nav-logo img{height:44px;width:auto;}
-.nav-sep{width:1px;height:32px;background:rgba(255,255,255,.12);}
-.nav-rbq{font-family:var(--fb);font-size:.72rem;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
-.nav-rbq span{color:rgba(255,255,255,.65);}
-.nav-links{display:flex;gap:22px;list-style:none;margin-left:auto;}
-.nav-links a{color:rgba(255,255,255,.6);font-family:var(--fb);font-size:.8rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding-bottom:3px;border-bottom:2px solid transparent;transition:color var(--t),border-color var(--t);}
-.nav-links a:hover,.nav-links a.active{color:var(--W);border-color:var(--R);}
-.nav-cta{background:var(--R)!important;color:var(--W)!important;border:none!important;padding:9px 20px;border-radius:2px;font-weight:700!important;transition:background var(--t)!important;}
-.nav-cta:hover{background:var(--Rd)!important;}
-.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:auto;}
-.nav-ham span{width:26px;height:2px;background:var(--W);border-radius:1px;}
-.nav-lang{display:inline-flex;align-items:center;font-family:var(--fb);font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.7);background:transparent;border:1.5px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:2px;transition:color var(--t),border-color var(--t);white-space:nowrap;}
-.nav-lang:hover{color:var(--W);border-color:var(--R);}
-.mob-lang{color:var(--W);font-family:var(--fh);font-size:1.1rem;text-transform:uppercase;letter-spacing:.06em;border:1.5px solid rgba(255,255,255,.3);padding:8px 24px;border-radius:2px;}
-.mob-lang:hover{border-color:var(--R);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:rgba(17,17,17,.96);border-bottom:2px solid var(--R);height:76px;display:flex;align-items:center;padding:0 5%;gap:32px;backdrop-filter:blur(10px);transition:background var(--t),box-shadow var(--t);}
+.nav.scrolled{background:rgba(17,17,17,1);box-shadow:0 4px 28px rgba(0,0,0,.4);}
+.nav-logo img{height:42px;width:auto;}
+.nav-sep{display:none;}
+.nav-rbq{display:none;}
+.nav-links{display:flex;gap:4px;list-style:none;margin-left:auto;}
+.nav-links a{color:rgba(255,255,255,.55);font-family:var(--fb);font-size:.77rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:7px 13px;border-radius:2px;transition:color var(--t),background var(--t);}
+.nav-links a:hover{color:var(--W);background:rgba(255,255,255,.07);}
+.nav-links a.active{color:var(--R);background:rgba(200,16,46,.08);}
+.nav-cta{background:var(--R)!important;color:var(--W)!important;padding:9px 22px!important;border-radius:2px;font-weight:700!important;font-size:.77rem!important;letter-spacing:.06em!important;transition:background var(--t),transform var(--t)!important;white-space:nowrap;}
+.nav-cta:hover{background:var(--Rd)!important;transform:translateY(-1px);}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:16px;}
+.nav-ham span{width:24px;height:2px;background:var(--W);border-radius:1px;}
+.nav-lang{display:inline-flex;align-items:center;gap:5px;font-family:var(--fb);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);padding:4px 0;border-bottom:1px solid transparent;transition:color var(--t),border-color var(--t);white-space:nowrap;}
+.nav-lang:hover{color:rgba(255,255,255,.85);border-color:var(--R);}
+.mob-lang{color:rgba(255,255,255,.6);font-family:var(--fb);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15);}
+.mob-lang:hover{color:var(--W);}
 
 /* ── MOBILE ──────────────────────────────────────── */
 .mob{display:none;position:fixed;inset:0;z-index:8999;background:var(--N);flex-direction:column;align-items:center;justify-content:center;gap:28px;}
@@ -486,20 +487,17 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 </div>
 
 <!-- Nav -->
-<nav class="nav">
+<nav class="nav" id="mainNav">
   <a href="#" class="nav-logo" onclick="showPage('index');return false;"><img src="img/img1.png" alt="Réno-Expert Toiture"></a>
-  <div class="nav-sep"></div>
-  <div class="nav-rbq">RBQ <span>5684-1091-01</span> &nbsp;&middot;&nbsp; APCHQ <span>Certified</span></div>
   <ul class="nav-links" id="nav-links">
     <li><a href="#" id="nav-index" onclick="showPage('index');return false;">Home</a></li>
     <li><a href="#" id="nav-installation" onclick="showPage('installation');return false;">Installation</a></li>
     <li><a href="#" id="nav-remplacement" onclick="showPage('remplacement');return false;">Replacement</a></li>
     <li><a href="#" id="nav-bardeaux" onclick="showPage('bardeaux');return false;">Shingles</a></li>
-    <li><a href="#" id="nav-estimation" onclick="showPage('estimation');return false;">Estimate</a></li>
     <li><a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a></li>
-    <li><a href="#" class="nav-cta" onclick="showPage('contact');return false;">Free Estimate</a></li>
   </ul>
-  <a href="reno_expert_toiture.html" class="nav-lang">🇫🇷 FR</a>
+  <a href="#" class="nav-cta" onclick="showPage('estimation');return false;">Free Estimate</a>
+  <a href="reno_expert_toiture.html" class="nav-lang">FR</a>
   <div class="nav-ham" onclick="document.getElementById('mob').classList.toggle('open')">
     <span></span><span></span><span></span>
   </div>
@@ -1564,6 +1562,11 @@ function updateFileCount() {
     count.textContent = uploadedFiles.length + ' photo' + (uploadedFiles.length > 1 ? 's' : '') + ' added';
   }
 }
+
+// Nav scroll effect
+window.addEventListener('scroll', function(){
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 30);
+});
 </script>
 </body>
 </html>
