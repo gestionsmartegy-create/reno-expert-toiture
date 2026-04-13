@@ -41,17 +41,19 @@ a{text-decoration:none;color:inherit;}
 /* ── NAV ─────────────────────────────────────────── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:9000;background:rgba(255,255,255,.97);border-bottom:2px solid var(--R);height:76px;display:flex;align-items:center;padding:0 5%;gap:32px;backdrop-filter:blur(10px);transition:background var(--t),box-shadow var(--t);}
 .nav.scrolled{background:rgba(255,255,255,1);box-shadow:0 4px 24px rgba(0,0,0,.1);}
-.nav-logo img{height:64px;width:auto;}
+.nav-logo img{height:86px;width:auto;object-fit:contain;}
 .nav-sep{display:none;}
 .nav-rbq{display:none;}
 .nav-links{display:flex;gap:4px;list-style:none;margin-left:auto;}
 .nav-links a{color:#555;font-family:var(--fb);font-size:.77rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 14px;border-radius:2px;transition:color var(--t),background var(--t);}
 .nav-links a:hover{color:var(--N);background:rgba(0,0,0,.06);}
 .nav-links a.active{color:var(--R);}
-.nav-cta{background:var(--R)!important;color:var(--W)!important;padding:10px 24px!important;border-radius:2px;font-weight:700!important;font-size:.77rem!important;letter-spacing:.07em!important;transition:background var(--t),transform var(--t),box-shadow var(--t)!important;white-space:nowrap;box-shadow:0 2px 12px rgba(200,16,46,.25);}
+.nav-cta{background:var(--R)!important;color:var(--W)!important;padding:14px 30px!important;border-radius:2px;font-weight:700!important;font-size:.88rem!important;letter-spacing:.07em!important;transition:background var(--t),transform var(--t),box-shadow var(--t)!important;white-space:nowrap;box-shadow:0 4px 18px rgba(200,16,46,.4);text-transform:uppercase!important;}
 .nav-cta:hover{background:var(--Rd)!important;transform:translateY(-1px);box-shadow:0 4px 18px rgba(200,16,46,.35)!important;}
 .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:16px;}
 .nav-ham span{width:24px;height:2px;background:var(--N);border-radius:1px;}
+.nav-tel{display:inline-flex;align-items:center;font-family:var(--fb);font-size:.88rem;font-weight:700;color:var(--N);white-space:nowrap;gap:5px;border-left:1px solid var(--GL);padding-left:16px;}
+.nav-tel:hover{color:var(--R);}
 .nav-lang{display:inline-flex;align-items:center;font-family:var(--fb);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#aaa;padding:4px 0;border-bottom:1px solid transparent;transition:color var(--t),border-color var(--t);white-space:nowrap;}
 .nav-lang:hover{color:var(--R);border-color:var(--R);}
 .mob-lang{color:rgba(255,255,255,.55);font-family:var(--fb);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:8px 0;}
@@ -327,6 +329,9 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   .cta-band-inner,.cta-mid-inner{grid-template-columns:1fr;}
   .av-grid{grid-template-columns:1fr 1fr;}
 }
+.mob-phone{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9001;background:var(--R);padding:14px 5%;text-align:center;box-shadow:0 -4px 16px rgba(0,0,0,.18);}
+.mob-phone a{color:var(--W);font-family:var(--fh);font-size:1.05rem;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;justify-content:center;gap:10px;}
+@media(max-width:768px){.mob-phone{display:block;}body{padding-bottom:60px;}}
 @media(max-width:768px){
   .nav-links,.nav-sep,.nav-rbq{display:none;}
   .nav-ham{display:flex;}
@@ -497,6 +502,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <li><a href="#" id="nav-contact" onclick="showPage('contact');return false;">Contact</a></li>
   </ul>
   <a href="#" class="nav-cta" onclick="showPage('estimation');return false;">Estimation gratuite</a>
+  <a href="tel:5146923520" class="nav-tel">&#128222;&nbsp;514&#8209;692&#8209;3520</a>
   <a href="/en" class="nav-lang">EN</a>
   <div class="nav-ham" onclick="document.getElementById('mob').classList.toggle('open')">
     <span></span><span></span><span></span>
@@ -529,7 +535,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
       <div class="eyebrow v anim-1">Couvreur résidentiel certifié — Grand Montréal</div>
       <h1 class="hero-h anim-2">Toiture<br><span class="r">durable.</span><br><span class="thin">Budget clair.</span></h1>
       <p class="anim-3" style="font-size:1.1rem;color:rgba(255,255,255,.6);max-width:520px;line-height:1.82;margin-bottom:36px;">
-        certifié APCHQ et BP CertainTeed. Estimation satellite sans déplacement. votre budget est arrêté dès le premier échange — sans révision de chiffres en cours de chantier.
+        Certifié APCHQ et BP CertainTeed. Estimation satellite sans déplacement. Votre budget est fixé dès le premier échange — aucune révision de prix en cours de chantier.
       </p>
       <div class="anim-4" style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:32px;">
         <a href="#" onclick="showPage('estimation');return false;" class="btn btn-r btn-lg">Obtenir mon estimation gratuite</a>
@@ -570,7 +576,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <div class="ti"><strong>Certifié BP</strong>CertainTeed — certification officielle</div>
     <div class="ti"><strong>Estimation satellite</strong>Précision sans déplacement</div>
     <div class="ti"><strong>RBQ 5684-1091-01</strong>Entrepreneur licencié</div>
-    <div class="ti"><strong>Assuré RCG</strong>votre maison est protégée</div>
+    <div class="ti"><strong>Assuré RCG</strong>Votre maison est protégée</div>
   </div>
 </div>
 
@@ -589,7 +595,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
           <div class="feat"><div class="feat-ico">01</div><div><div class="feat-h">Estimation satellite — précision garantie</div><div class="feat-p">Superficie, pente et matériaux calculés à distance. Fourchette de prix honnête, avec ou sans rendez-vous, sans surprise sur le chantier.</div></div></div>
           <div class="feat"><div class="feat-ico">02</div><div><div class="feat-h">Double certification APCHQ et BP</div><div class="feat-p">Les certifications les plus exigeantes du secteur. Une preuve concrète de compétence, pas une simple accréditation administrative.</div></div></div>
           <div class="feat"><div class="feat-ico">03</div><div><div class="feat-h">Résidentiel exclusivement</div><div class="feat-p">Aucune dispersion. Toiture résidentielle uniquement. Un niveau d'exécution que les entrepreneurs généralistes ne peuvent pas atteindre.</div></div></div>
-          <div class="feat"><div class="feat-ico">04</div><div><div class="feat-h">Financement flexible disponible</div><div class="feat-p">Démarre tes travaux maintenant. Répartis les paiements selon un calendrier adapté à ta situation.</div></div></div>
+          <div class="feat"><div class="feat-ico">04</div><div><div class="feat-h">Financement flexible disponible</div><div class="feat-p">Démarrez vos travaux maintenant. Répartissez les paiements selon un calendrier adapté à votre situation.</div></div></div>
         </div>
         <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
           <a href="#" onclick="showPage('estimation');return false;" class="btn btn-r">Estimation gratuite</a>
@@ -607,8 +613,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <p class="lead">Chaque intervention est planifiée avec précision, exécutée par des couvreurs certifiés, livrée dans les délais convenus.</p>
     <div class="svc-grid">
       <div class="svc"><div class="svc-img"><img src="/img/img4.jpg" alt="Installation toiture neuve Montréal" loading="lazy"></div><div class="svc-body"><div class="svc-num">Service 01</div><div class="svc-h">Installation de toiture neuve</div><p class="svc-p">Nouvelles constructions et agrandissements. Calcul de charge, matériaux certifiés, pose conforme aux normes. Une base solide pour 25 à 50 ans.</p><a href="#" onclick="showPage('installation');return false;" class="svc-link">Voir ce service &rarr;</a></div></div>
-      <div class="svc"><div class="svc-img"><img src="/img/img5.jpg" alt="Remplacement toiture Montréal" loading="lazy"></div><div class="svc-body"><div class="svc-num">Service 02</div><div class="svc-h">Remplacement de toiture</div><p class="svc-p">Dépose complète, inspection structure, nouvelle membrane et bardeaux. Tu règles le problème une fois pour toutes.</p><a href="#" onclick="showPage('remplacement');return false;" class="svc-link">Voir ce service &rarr;</a></div></div>
-      <div class="svc"><div class="svc-img"><img src="/img/img6.jpg" alt="Bardeaux asphalte CertainTeed Montréal" loading="lazy"></div><div class="svc-body"><div class="svc-num">Service 03</div><div class="svc-h">Bardeaux haut de gamme</div><p class="svc-p">bardeaux CertainTeed, BP et IKO pour le climat québécois. Gel-dégel, charge de neige, vents. Moins d'entretien, plus de valeur.</p><a href="#" onclick="showPage('bardeaux');return false;" class="svc-link">Voir ce service &rarr;</a></div></div>
+      <div class="svc"><div class="svc-img"><img src="/img/img5.jpg" alt="Remplacement toiture Montréal" loading="lazy"></div><div class="svc-body"><div class="svc-num">Service 02</div><div class="svc-h">Remplacement de toiture</div><p class="svc-p">Dépose complète, inspection structure, nouvelle membrane et bardeaux. Vous réglez le problème une fois pour toutes.</p><a href="#" onclick="showPage('remplacement');return false;" class="svc-link">Voir ce service &rarr;</a></div></div>
+      <div class="svc"><div class="svc-img"><img src="/img/img6.jpg" alt="Bardeaux asphalte CertainTeed Montréal" loading="lazy"></div><div class="svc-body"><div class="svc-num">Service 03</div><div class="svc-h">Bardeaux haut de gamme</div><p class="svc-p">Bardeaux CertainTeed, BP et IKO adaptés au climat québécois. Gel-dégel, charge de neige, vents. Moins d'entretien, plus de valeur.</p><a href="#" onclick="showPage('bardeaux');return false;" class="svc-link">Voir ce service &rarr;</a></div></div>
       <div class="svc"><div class="svc-img"><img src="/img/img7.jpg" alt="Estimation toiture satellite Montréal" loading="lazy"></div><div class="svc-body"><div class="svc-num">Service 04</div><div class="svc-h">Inspection et estimation</div><p class="svc-p">Analyse satellite de votre toit. Estimation précise — avec ou sans rendez-vous. Vous connaissez votre budget avant même de décrocher le téléphone.</p><a href="#" onclick="showPage('estimation');return false;" class="svc-link">Lancer mon estimation &rarr;</a></div></div>
     </div>
   </div>
@@ -617,7 +623,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 <div class="cta-band">
   <div class="cta-band-inner wrap">
     <div>
-      <h2 class="sh w">Sache ce que ça coûte<br><span class="r">avant de décider</span></h2>
+      <h2 class="sh w">Connaissez votre budget<br><span class="r">avant de décider</span></h2>
       <p class="lead w" style="margin-top:12px;">Estimation satellite gratuite â€” avec ou sans rendez-vous. Résultat en 24 h. Aucun déplacement requis. Aucun engagement.</p>
       <div class="checks"><div class="check">100 % gratuit</div><div class="check">Sans rendez-vous</div><div class="check">Résultat en 24 h</div><div class="check">Sans engagement</div></div>
     </div>
@@ -632,11 +638,11 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="wrap">
     <div class="eyebrow v">Comment ça fonctionne</div>
     <h2 class="sh w">4 étapes.<br><span class="r">Zéro mauvaise surprise.</span></h2>
-    <p class="lead w">Un processus transparent, pensé pour respecter ton temps et votre budget.</p>
+    <p class="lead w">Un processus transparent, pensé pour respecter votre temps et votre budget.</p>
     <div class="steps">
-      <div class="step"><div class="step-n">1</div><div class="step-h">Tu fournis votre adresse</div><p class="step-p">L'adresse de la propriété. Pas de visite préalable requise.</p></div>
+      <div class="step"><div class="step-n">1</div><div class="step-h">Vous fournissez votre adresse</div><p class="step-p">L'adresse de la propriété. Pas de visite préalable requise.</p></div>
       <div class="step"><div class="step-n">2</div><div class="step-h">Analyse satellite</div><p class="step-p">Notre système mesure automatiquement la superficie, la pente et la complexité de votre toit.</p></div>
-      <div class="step"><div class="step-n">3</div><div class="step-h">Estimation précise</div><p class="step-p">Tu reçois une fourchette de prix réaliste, basée sur des données concrètes.</p></div>
+      <div class="step"><div class="step-n">3</div><div class="step-h">Estimation précise</div><p class="step-p">Vous recevez une fourchette de prix réaliste, basée sur des données concrètes.</p></div>
       <div class="step"><div class="step-n">4</div><div class="step-h">Chantier exécuté</div><p class="step-p">Planification rigoureuse, délais respectés, chantier propre. Résultat garanti.</p></div>
     </div>
     <div style="text-align:center;margin-top:48px;"><a href="#" onclick="showPage('estimation');return false;" class="btn btn-r btn-lg">Démarrer maintenant — c'est gratuit</a></div>
@@ -686,7 +692,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <text x="95" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="7.5" fill="white" text-anchor="middle">CERTIFIÉ</text>
 </svg></div><div class="cert-card-h">Certifié APCHQ</div><div class="cert-card-p">Association des professionnels de la construction et de l'habitation du Québec.</div></div>
       <div class="cert-card"><span class="cert-rbq-big">5684-1091-01</span><div class="cert-card-h">Licencié RBQ</div><div class="cert-card-p">Régie du bâtiment du Québec. Entrepreneur général habilité à exercer au Québec.</div></div>
-      <div class="cert-card"><div style="font-size:2.8rem;margin-bottom:18px;text-align:center;">&#128737;</div><div class="cert-card-h">Assurance complète</div><div class="cert-card-p">Responsabilité civile générale. votre maison est couverte pendant toute la durée des travaux.</div></div>
+      <div class="cert-card"><div style="font-size:2.8rem;margin-bottom:18px;text-align:center;">&#128737;</div><div class="cert-card-h">Assurance complète</div><div class="cert-card-p">Responsabilité civile générale. Votre maison est couverte pendant toute la durée des travaux.</div></div>
     </div>
   </div>
 </section>
@@ -695,7 +701,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="wrap">
     <div class="eyebrow">Zone de service</div>
     <h2 class="sh">Tout le Grand <span class="r">Montréal</span></h2>
-    <p class="lead">Nous intervenons chez les propriétaires résidentiels dans les secteurs suivants. Pas certain ? Appelle — on confirme en deux minutes.</p>
+    <p class="lead">Nous intervenons chez les propriétaires résidentiels dans les secteurs suivants. Pas certain ? Appelez — on confirme en deux minutes.</p>
     <div class="zones-grid">
       <div class="zone"><div class="zname">Montréal</div><div class="zsub">Tous arrondissements</div></div>
       <div class="zone"><div class="zname">Laval</div><div class="zsub">Île de Laval</div></div>
@@ -739,7 +745,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <div class="ti"><strong>Certifié BP</strong>CertainTeed — certification officielle</div>
     <div class="ti"><strong>Estimation satellite</strong>Précision sans déplacement</div>
     <div class="ti"><strong>RBQ 5684-1091-01</strong>Entrepreneur licencié</div>
-    <div class="ti"><strong>Assuré RCG</strong>votre maison est protégée</div>
+    <div class="ti"><strong>Assuré RCG</strong>Votre maison est protégée</div>
   </div>
 </div>
 <section><div class="wrap">
@@ -748,7 +754,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="sp-grid">
     <div>
       <p class="lead">Chaque projet commence par une analyse rigoureuse. On ne pose rien sans avoir tout calculé.</p>
-      <div class="sp-steps" style="margin-top:24px;"><div class="sp-step"><div class="sp-step-n">1</div><div><div class="sp-step-h">Analyse de la structure</div><div class="sp-step-p">Inspection complète du pontage, des solins et de la ventilation avant toute intervention.</div></div></div><div class="sp-step"><div class="sp-step-n">2</div><div><div class="sp-step-h">Calcul de charge et sélection</div><div class="sp-step-p">Superficie, pente, complexité. Nous déterminons le bon système selon ta propriété.</div></div></div><div class="sp-step"><div class="sp-step-n">3</div><div><div class="sp-step-h">Installation conforme RBQ</div><div class="sp-step-p">Pose par des couvreurs certifiés Certifié BP. Conformité au Code du bâtiment du Québec.</div></div></div><div class="sp-step"><div class="sp-step-n">4</div><div><div class="sp-step-h">Contrôle qualité et nettoyage</div><div class="sp-step-p">Inspection finale point par point. Chantier nettoyé. Documentation pour ta garantie fabricant.</div></div></div></div>
+      <div class="sp-steps" style="margin-top:24px;"><div class="sp-step"><div class="sp-step-n">1</div><div><div class="sp-step-h">Analyse de la structure</div><div class="sp-step-p">Inspection complète du pontage, des solins et de la ventilation avant toute intervention.</div></div></div><div class="sp-step"><div class="sp-step-n">2</div><div><div class="sp-step-h">Calcul de charge et sélection</div><div class="sp-step-p">Superficie, pente, complexité. Nous déterminons le bon système selon votre propriété.</div></div></div><div class="sp-step"><div class="sp-step-n">3</div><div><div class="sp-step-h">Installation conforme RBQ</div><div class="sp-step-p">Pose par des couvreurs certifiés Certifié BP. Conformité au Code du bâtiment du Québec.</div></div></div><div class="sp-step"><div class="sp-step-n">4</div><div><div class="sp-step-h">Contrôle qualité et nettoyage</div><div class="sp-step-p">Inspection finale point par point. Chantier nettoyé. Documentation pour votre garantie fabricant.</div></div></div></div>
       <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
         <a href="#" onclick="showPage('estimation');return false;" class="btn btn-r">Estimation gratuite</a>
         <a href="#" onclick="showPage('contact');return false;" class="btn btn-ov">Parler à un expert</a>
@@ -781,7 +787,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 </div>
 <section style="background:var(--C);"><div class="wrap">
   <div class="eyebrow">Questions fréquentes</div>
-  <h2 class="sh">Ce que tu dois savoir<br><span class='r'>sur ce service</span></h2>
+  <h2 class="sh">Ce que vous devez savoir<br><span class='r'>sur ce service</span></h2>
   <div class="faq-list"><div class="faq-item"><button class="faq-q">Combien de temps dure une installation ?<span class="faq-icon">+</span></button><div class="faq-a">Pour une maison standard, 2 à 4 jours selon la superficie et la complexité. Nous planifions le chantier et respectons le calendrier.</div></div><div class="faq-item"><button class="faq-q">Quels matériaux utilisez-vous ?<span class="faq-icon">+</span></button><div class="faq-a">Principalement les bardeaux CertainTeed, BP et IKO, adaptés au climat québécois. Selon les besoins, nous sélectionnons le bon système de membrane et de ventilation.</div></div><div class="faq-item"><button class="faq-q">L'estimation est-elle précise pour une neuve ?<span class="faq-icon">+</span></button><div class="faq-a">Notre système satellite mesure avec une marge d'erreur inférieure à 3 %. Pour les nouvelles constructions, nous travaillons avec les plans fournis.</div></div><div class="faq-item"><button class="faq-q">Y a-t-il une garantie sur la pose ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. En tant que Certifié BP la garantie fabricant peut atteindre 50 ans selon le produit sélectionné.</div></div></div>
   <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;"><a href="#" onclick="showPage('estimation');return false;" class="btn btn-r btn-lg">Obtenir mon estimation gratuite</a><a href="#" onclick="showPage('contact');return false;" class="btn btn-ov btn-lg">Nous contacter</a></div>
 </div></section></div>
@@ -805,7 +811,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <div class="ti"><strong>Certifié BP</strong>CertainTeed — certification officielle</div>
     <div class="ti"><strong>Estimation satellite</strong>Précision sans déplacement</div>
     <div class="ti"><strong>RBQ 5684-1091-01</strong>Entrepreneur licencié</div>
-    <div class="ti"><strong>Assuré RCG</strong>votre maison est protégée</div>
+    <div class="ti"><strong>Assuré RCG</strong>Votre maison est protégée</div>
   </div>
 </div>
 <section><div class="wrap">
@@ -847,8 +853,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 </div>
 <section style="background:var(--C);"><div class="wrap">
   <div class="eyebrow">Questions fréquentes</div>
-  <h2 class="sh">Ce que tu dois savoir<br><span class='r'>sur ce service</span></h2>
-  <div class="faq-list"><div class="faq-item"><button class="faq-q">Combien coûte un remplacement à Montréal ?<span class="faq-icon">+</span></button><div class="faq-a">Dépend de la superficie, pente, complexité et matériaux. La plupart des remplacements se situent entre 8 000 $ et 25 000 $. Notre estimation satellite te donne un chiffre précis gratuitement.</div></div><div class="faq-item"><button class="faq-q">Faut-il vider la maison ?<span class="faq-icon">+</span></button><div class="faq-a">Non. Les travaux se font entièrement en extérieur. vous pouvez rester chez toi.</div></div><div class="faq-item"><button class="faq-q">Offrez-vous du financement ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. Solutions de financement flexibles pour démarrer maintenant sans mobiliser tout ton capital.</div></div><div class="faq-item"><button class="faq-q">Faut-il démonter toute l'ancienne toiture ?<span class="faq-icon">+</span></button><div class="faq-a">Oui, systématiquement. Poser par-dessus masque les problèmes et annule les garanties fabricant.</div></div></div>
+  <h2 class="sh">Ce que vous devez savoir<br><span class='r'>sur ce service</span></h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-q">Combien coûte un remplacement à Montréal ?<span class="faq-icon">+</span></button><div class="faq-a">Dépend de la superficie, pente, complexité et matériaux. La plupart des remplacements se situent entre 8 000 $ et 25 000 $. Notre estimation satellite vous donne un chiffre précis gratuitement.</div></div><div class="faq-item"><button class="faq-q">Faut-il vider la maison ?<span class="faq-icon">+</span></button><div class="faq-a">Non. Les travaux se font entièrement en extérieur. Vous pouvez rester chez vous.</div></div><div class="faq-item"><button class="faq-q">Offrez-vous du financement ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. Solutions de financement flexibles pour démarrer maintenant sans mobiliser tout votre capital.</div></div><div class="faq-item"><button class="faq-q">Faut-il démonter toute l'ancienne toiture ?<span class="faq-icon">+</span></button><div class="faq-a">Oui, systématiquement. Poser par-dessus masque les problèmes et annule les garanties fabricant.</div></div></div>
   <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;"><a href="#" onclick="showPage('estimation');return false;" class="btn btn-r btn-lg">Obtenir mon estimation gratuite</a><a href="#" onclick="showPage('contact');return false;" class="btn btn-ov btn-lg">Nous contacter</a></div>
 </div></section></div>
 <div id="page-bardeaux" style="display:none;"><div class="page-hero">
@@ -871,7 +877,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <div class="ti"><strong>Certifié BP</strong>CertainTeed — certification officielle</div>
     <div class="ti"><strong>Estimation satellite</strong>Précision sans déplacement</div>
     <div class="ti"><strong>RBQ 5684-1091-01</strong>Entrepreneur licencié</div>
-    <div class="ti"><strong>Assuré RCG</strong>votre maison est protégée</div>
+    <div class="ti"><strong>Assuré RCG</strong>Votre maison est protégée</div>
   </div>
 </div>
 <section><div class="wrap">
@@ -880,7 +886,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="sp-grid">
     <div>
       <p class="lead">Chaque projet commence par une analyse rigoureuse. On ne pose rien sans avoir tout calculé.</p>
-      <div class="sp-steps" style="margin-top:24px;"><div class="sp-step"><div class="sp-step-n">1</div><div><div class="sp-step-h">Analyse de ta propriété</div><div class="sp-step-p">Superficie, pente, style architectural. On sélectionne le bon produit selon ta réalité.</div></div></div><div class="sp-step"><div class="sp-step-n">2</div><div><div class="sp-step-h">Choix du produit et coloris</div><div class="sp-step-p">Gamme CertainTeed présentée avec échantillons. Simulation sur ton type de maison.</div></div></div><div class="sp-step"><div class="sp-step-n">3</div><div><div class="sp-step-h">Pose certifiée Certifié BP</div><div class="sp-step-p">Installation conforme aux spécifications du fabricant. Garantie protégée.</div></div></div><div class="sp-step"><div class="sp-step-n">4</div><div><div class="sp-step-h">Activation de la garantie</div><div class="sp-step-p">Documentation transmise. Garantie fabricant activée dès la fin des travaux.</div></div></div></div>
+      <div class="sp-steps" style="margin-top:24px;"><div class="sp-step"><div class="sp-step-n">1</div><div><div class="sp-step-h">Analyse de votre propriété</div><div class="sp-step-p">Superficie, pente, style architectural. Nous sélectionnons le bon produit selon votre situation.</div></div></div><div class="sp-step"><div class="sp-step-n">2</div><div><div class="sp-step-h">Choix du produit et coloris</div><div class="sp-step-p">Gamme CertainTeed présentée avec échantillons. Simulation sur votre type de maison.</div></div></div><div class="sp-step"><div class="sp-step-n">3</div><div><div class="sp-step-h">Pose certifiée Certifié BP</div><div class="sp-step-p">Installation conforme aux spécifications du fabricant. Garantie protégée.</div></div></div><div class="sp-step"><div class="sp-step-n">4</div><div><div class="sp-step-h">Activation de la garantie</div><div class="sp-step-p">Documentation transmise. Garantie fabricant activée dès la fin des travaux.</div></div></div></div>
       <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
         <a href="#" onclick="showPage('estimation');return false;" class="btn btn-r">Estimation gratuite</a>
         <a href="#" onclick="showPage('contact');return false;" class="btn btn-ov">Parler à un expert</a>
@@ -902,8 +908,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 <div class="cta-mid">
   <div class="cta-mid-inner wrap">
     <div>
-      <h2 class="sh w">Quel bardeau convient<br><span class='r'>à ta propriété ?</span></h2>
-      <p class="lead w" style="margin-top:10px;">Notre système identifie le bon produit selon ta structure, ton style et votre budget.</p>
+      <h2 class="sh w">Quel bardeau convient<br><span class='r'>à votre propriété ?</span></h2>
+      <p class="lead w" style="margin-top:10px;">Notre système identifie le bon produit selon votre structure, votre style et votre budget.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
       <a href="#" onclick="showPage('estimation');return false;" class="btn btn-w btn-lg">Lancer mon estimation</a>
@@ -913,8 +919,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 </div>
 <section style="background:var(--C);"><div class="wrap">
   <div class="eyebrow">Questions fréquentes</div>
-  <h2 class="sh">Ce que tu dois savoir<br><span class='r'>sur ce service</span></h2>
-  <div class="faq-list"><div class="faq-item"><button class="faq-q">Différence entre bardeaux de base et haut de gamme ?<span class="faq-icon">+</span></button><div class="faq-a">Les haut de gamme sont 2 à 3 fois plus épais, résistent mieux aux UV et aux vents, et offrent des garanties plus longues. Le surcout est récupéré en durabilité.</div></div><div class="faq-item"><button class="faq-q">Puis-je choisir la couleur ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. CertainTeed offre une gamme étendue de coloris et textures. Nous présentons des échantillons et des simulations.</div></div><div class="faq-item"><button class="faq-q">Les bardeaux CertainTeed, BP et IKO sont-ils adaptés au Québec ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. Testés selon les normes climatiques canadiennes. Certifiés pour les cycles de gel-dégel sévères québécois.</div></div><div class="faq-item"><button class="faq-q">Durée de vie réelle au Québec ?<span class="faq-icon">+</span></button><div class="faq-a">25 à 35 ans pour les bardeaux architectural. Avec les produits premium et une pose certifiée, la garantie peut atteindre 50 ans.</div></div></div>
+  <h2 class="sh">Ce que vous devez savoir<br><span class='r'>sur ce service</span></h2>
+  <div class="faq-list"><div class="faq-item"><button class="faq-q">Différence entre bardeaux de base et haut de gamme ?<span class="faq-icon">+</span></button><div class="faq-a">Les haut de gamme sont 2 à 3 fois plus épais, résistent mieux aux UV et aux vents, et offrent des garanties plus longues. Le surcoût est largement récupéré en durabilité et économies d'entretien.</div></div><div class="faq-item"><button class="faq-q">Puis-je choisir la couleur ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. CertainTeed offre une gamme étendue de coloris et textures. Nous présentons des échantillons et des simulations.</div></div><div class="faq-item"><button class="faq-q">Les bardeaux CertainTeed, BP et IKO sont-ils adaptés au Québec ?<span class="faq-icon">+</span></button><div class="faq-a">Oui. Testés selon les normes climatiques canadiennes. Certifiés pour les cycles de gel-dégel sévères québécois.</div></div><div class="faq-item"><button class="faq-q">Durée de vie réelle au Québec ?<span class="faq-icon">+</span></button><div class="faq-a">25 à 35 ans pour les bardeaux architectural. Avec les produits premium et une pose certifiée, la garantie peut atteindre 50 ans.</div></div></div>
   <div style="margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;"><a href="#" onclick="showPage('estimation');return false;" class="btn btn-r btn-lg">Obtenir mon estimation gratuite</a><a href="#" onclick="showPage('contact');return false;" class="btn btn-ov btn-lg">Nous contacter</a></div>
 </div></section></div>
 <div id="page-estimation" style="display:none;">
@@ -924,7 +930,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="page-hero-inner">
     <div class="breadcrumb"><a href="#" onclick="showPage('index');return false;">Accueil</a> <span>/</span> Estimation gratuite</div>
     <h1 class="anim-1">Estimation de toiture<br><span class="r">100 % gratuite</span></h1>
-    <p class="page-hero-desc anim-2">Par adresse satellite ou par photos de ta propriété — un couvreur certifié t'envoie une fourchette de prix précise en moins de 24 heures.</p>
+    <p class="page-hero-desc anim-2">Par adresse satellite ou par photos de votre propriété — un couvreur certifié vous envoie une fourchette de prix précise en moins de 24 heures.</p>
     <div class="page-hero-rbq anim-3">Entrepreneur licencié — <strong>RBQ : 5684-1091-01</strong></div>
   </div>
 </div>
@@ -943,8 +949,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 <section style="background:var(--C);">
 <div class="wrap">
   <div class="eyebrow" style="justify-content:center;">Estimation gratuite</div>
-  <h2 class="sh" style="text-align:center;max-width:680px;margin:0 auto 12px;">Dis-nous comment<br><span class="r">on mesure votre toit</span></h2>
-  <p class="lead" style="text-align:center;margin:0 auto 48px;">Adresse pour analyse satellite, ou photos si tu préfères. Dans tous les cas, vous recevez un chiffre honnête en moins de 24 h.</p>
+  <h2 class="sh" style="text-align:center;max-width:680px;margin:0 auto 12px;">Choisissez comment<br><span class="r">on mesure votre toit</span></h2>
+  <p class="lead" style="text-align:center;margin:0 auto 48px;">Adresse pour analyse satellite, ou photos si vous préférez. Dans tous les cas, vous recevez un chiffre honnête en moins de 24 h.</p>
 
   <div class="est-wizard" id="est-wizard">
 
@@ -961,18 +967,18 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 
     <!-- ─── ÉTAPE 1 : Méthode ─── -->
     <div class="est-step" id="est-step-1">
-      <div class="est-step-h">Comment veux-tu qu'on mesure votre toit ?</div>
+      <div class="est-step-h">Comment souhaitez-vous qu'on mesure votre toit ?</div>
       <div class="est-methods">
         <div class="est-method" id="method-adresse" onclick="selectMethod('adresse')">
           <div class="est-method-ico">📍</div>
           <div class="est-method-t">Par adresse</div>
-          <div class="est-method-d">Tu nous fournis votre adresse. Notre système satellite mesure superficie, pente et complexité — aucun déplacement requis de ta part.</div>
+          <div class="est-method-d">Fournissez votre adresse. Notre système satellite mesure superficie, pente et complexité — aucun déplacement requis de votre part.</div>
           <div class="est-method-badge">Recommandé</div>
         </div>
         <div class="est-method" id="method-photos" onclick="selectMethod('photos')">
           <div class="est-method-ico">📸</div>
           <div class="est-method-t">Par photos</div>
-          <div class="est-method-d">Tu envoies quelques photos de ta propriété selon nos indications. Un couvreur certifié analyse et te recontacte dans les 24 heures.</div>
+          <div class="est-method-d">Envoyez quelques photos de votre propriété selon nos indications. Un couvreur certifié analyse et vous recontacte dans les 24 heures.</div>
           <div class="est-method-badge est-method-badge-alt">Flexible</div>
         </div>
       </div>
@@ -983,7 +989,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 
     <!-- ─── ÉTAPE 2a : Adresse ─── -->
     <div class="est-step" id="est-step-2a" style="display:none;">
-      <div class="est-step-h">Adresse de ta propriété</div>
+      <div class="est-step-h">Adresse de votre propriété</div>
       <div class="fg" style="margin-bottom:20px;">
         <label>Adresse complète *</label>
         <input type="text" id="est-adresse" placeholder="123 Rue des Érables, Terrebonne, QC J6X 1A1" style="font-size:1rem;padding:14px 16px;">
@@ -1024,7 +1030,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 
     <!-- ─── ÉTAPE 2b : Photos ─── -->
     <div class="est-step" id="est-step-2b" style="display:none;">
-      <div class="est-step-h">Photos de ta propriété</div>
+      <div class="est-step-h">Photos de votre propriété</div>
 
       <!-- Photo guide -->
       <div class="photo-guide">
@@ -1032,13 +1038,13 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
           <span class="photo-guide-ico">📋</span>
           Quelles photos prendre ?
         </div>
-        <p class="photo-guide-intro">Pour recevoir l'estimation la plus précise possible, envoie-nous les photos suivantes. Tu n'as pas tout ? Envoie ce que vous avez — on s'adapte.</p>
+        <p class="photo-guide-intro">Pour recevoir l'estimation la plus précise possible, envoyez-nous les photos suivantes. Vous n'avez pas tout ? Envoyez ce que vous avez — on s'adapte.</p>
         <div class="photo-types-grid">
           <div class="photo-type">
             <div class="photo-type-num">01</div>
             <div class="photo-type-body">
               <div class="photo-type-t">Vue de face de la maison</div>
-              <div class="photo-type-d">Recule suffisamment pour capturer toute la façade et le toit au complet. Prend de chaque côté si possible.</div>
+              <div class="photo-type-d">Reculez suffisamment pour capturer toute la façade et le toit au complet. Prenez de chaque côté si possible.</div>
               <div class="photo-type-tip">💡 Idéal depuis le trottoir ou la rue</div>
             </div>
           </div>
@@ -1046,7 +1052,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
             <div class="photo-type-num">02</div>
             <div class="photo-type-body">
               <div class="photo-type-t">Chaque pente du toit</div>
-              <div class="photo-type-d">Tourne autour de la maison et prends une photo de chaque versant — avant, arrière, côté gauche, côté droit.</div>
+              <div class="photo-type-d">Faites le tour de la maison et prenez une photo de chaque versant — avant, arrière, côté gauche, côté droit.</div>
               <div class="photo-type-tip">💡 4 à 6 photos suffisent pour la plupart des maisons</div>
             </div>
           </div>
@@ -1070,7 +1076,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
             <div class="photo-type-num">05</div>
             <div class="photo-type-body">
               <div class="photo-type-t">Grenier ou sous-toit (optionnel)</div>
-              <div class="photo-type-d">Si vous avez accès à ton grenier, une photo de la structure de bois (chevrons, pontage) nous aide à évaluer l'état général.</div>
+              <div class="photo-type-d">Si vous avez accès à votre grenier, une photo de la structure de bois (chevrons, pontage) nous aide à évaluer l'état général.</div>
               <div class="photo-type-tip">💡 Pas nécessaire si l'accès est difficile</div>
             </div>
           </div>
@@ -1087,14 +1093,14 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 
       <!-- Upload zone -->
       <div class="fg" style="margin-top:32px;">
-        <label>Téléverse tes photos <span style="color:var(--G);font-weight:400;text-transform:none;letter-spacing:0;">(jusqu'à 10 photos · max 10 Mo chacune)</span></label>
+        <label>Téléversez vos photos <span style="color:var(--G);font-weight:400;text-transform:none;letter-spacing:0;">(jusqu'à 10 photos · max 10 Mo chacune)</span></label>
         <div class="est-dropzone" id="est-dropzone"
              onclick="document.getElementById('est-file-input').click()"
              ondragover="estDragOver(event)"
              ondragleave="estDragLeave(event)"
              ondrop="estDrop(event)">
           <div class="est-dz-ico">📁</div>
-          <div class="est-dz-t">Glisse tes photos ici <span style="color:var(--G);">ou</span> <span style="color:var(--R);text-decoration:underline;">clique pour parcourir</span></div>
+          <div class="est-dz-t">Glissez vos photos ici <span style="color:var(--G);">ou</span> <span style="color:var(--R);text-decoration:underline;">clique pour parcourir</span></div>
           <div class="est-dz-sub">JPG · PNG · HEIC (iPhone) · Captures d'écran</div>
           <input type="file" id="est-file-input" multiple accept="image/*,.heic" style="display:none;" onchange="handleFiles(this.files)">
         </div>
@@ -1132,8 +1138,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 
     <!-- ─── ÉTAPE 3 : Contact ─── -->
     <div class="est-step" id="est-step-3" style="display:none;">
-      <div class="est-step-h">Tes coordonnées</div>
-      <p style="color:var(--G);font-size:.9rem;line-height:1.7;margin-bottom:28px;">Un couvreur certifié de l'équipe te contacte dans les <strong style="color:var(--S);">24 heures ouvrables</strong> avec votre estimation détaillée. Aucune technique de vente.</p>
+      <div class="est-step-h">Vos coordonnées</div>
+      <p style="color:var(--G);font-size:.9rem;line-height:1.7;margin-bottom:28px;">Un couvreur certifié de l'équipe vous contacte dans les <strong style="color:var(--S);">24 heures ouvrables</strong> avec votre estimation détaillée. Aucune technique de vente.</p>
       <div class="fg-2">
         <div class="fg"><label>Prénom *</label><input type="text" id="est-prenom" placeholder="Jean-François"></div>
         <div class="fg"><label>Nom *</label><input type="text" id="est-nom" placeholder="Martin"></div>
@@ -1169,9 +1175,9 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <div class="est-step" id="est-step-4" style="display:none;text-align:center;padding:56px 24px;">
       <div style="width:72px;height:72px;background:var(--V);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:2rem;color:white;">✓</div>
       <div class="est-step-h" style="color:var(--V);text-align:center;">Demande envoyée !</div>
-      <p style="color:var(--G);max-width:500px;margin:0 auto 36px;line-height:1.85;font-size:.97rem;">Un couvreur certifié de l'équipe Toiture Renault Expert analyse votre demande et te contacte dans les <strong style="color:var(--S);">24 heures ouvrables</strong> avec votre estimation détaillée et honnête.</p>
+      <p style="color:var(--G);max-width:500px;margin:0 auto 36px;line-height:1.85;font-size:.97rem;">Un couvreur certifié de l'équipe Toiture Renault Expert analyse votre demande et vous contacte dans les <strong style="color:var(--S);">24 heures ouvrables</strong> avec votre estimation détaillée et honnête.</p>
       <div style="background:var(--N);padding:28px 32px;border-left:4px solid var(--Vl);text-align:left;max-width:440px;margin:0 auto 36px;display:inline-block;">
-        <div style="color:var(--Vl);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;">Tu préfères appeler directement ?</div>
+        <div style="color:var(--Vl);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;">Vous préférez appeler directement ?</div>
         <a href="tel:5146923520" style="color:var(--W);font-family:var(--fh);font-size:1.8rem;letter-spacing:.02em;display:block;margin-bottom:4px;">514-692-3520</a>
         <div style="color:rgba(255,255,255,.32);font-size:.8rem;">Lun–Ven 8h–18h · Message 24/7</div>
       </div>
@@ -1187,12 +1193,12 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="wrap">
     <div class="eyebrow v">Ce qui se passe ensuite</div>
     <h2 class="sh w">4 étapes.<br><span class="r">Résultat en 24 heures.</span></h2>
-    <p class="lead w">Un processus clair, sans surprise, pensé pour respecter ton temps.</p>
+    <p class="lead w">Un processus clair, sans surprise, pensé pour respecter votre temps.</p>
     <div class="steps">
-      <div class="step"><div class="step-n">1</div><div class="step-h">Tu envoies votre demande</div><p class="step-p">Adresse ou photos — le formulaire prend moins de 3 minutes.</p></div>
+      <div class="step"><div class="step-n">1</div><div class="step-h">Vous envoyez votre demande</div><p class="step-p">Adresse ou photos — le formulaire prend moins de 3 minutes.</p></div>
       <div class="step"><div class="step-n">2</div><div class="step-h">On analyse votre toit</div><p class="step-p">Satellite ou photos. Superficie, pente, complexité — tout est mesuré avec soin.</p></div>
-      <div class="step"><div class="step-n">3</div><div class="step-h">Estimation en 24 h</div><p class="step-p">Un couvreur certifié te contacte avec une fourchette de prix honnête et détaillée.</p></div>
-      <div class="step"><div class="step-n">4</div><div class="step-h">Tu décides librement</div><p class="step-p">Aucune pression. Aucun engagement. Tu avances quand tu es prêt.</p></div>
+      <div class="step"><div class="step-n">3</div><div class="step-h">Estimation en 24 h</div><p class="step-p">Un couvreur certifié vous contacte avec une fourchette de prix honnête et détaillée.</p></div>
+      <div class="step"><div class="step-n">4</div><div class="step-h">Vous décidez librement</div><p class="step-p">Aucune pression. Aucun engagement. Vous avancez quand vous êtes prêt.</p></div>
     </div>
   </div>
 </section>
@@ -1200,13 +1206,13 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 <!-- FAQ -->
 <section style="background:var(--C);"><div class="wrap">
   <div class="eyebrow">Questions fréquentes</div>
-  <h2 class="sh">Ce que tu dois savoir<br><span class="r">avant d'envoyer</span></h2>
+  <h2 class="sh">Ce que vous devez savoir<br><span class="r">avant d'envoyer</span></h2>
   <div class="faq-list">
-    <div class="faq-item"><button class="faq-q">L'estimation est-elle vraiment gratuite ?<span class="faq-icon">+</span></button><div class="faq-a">100 % gratuit, sans condition. Aucune carte de crédit, aucun engagement, aucune pression de suivi. On t'envoie un chiffre — tu décides.</div></div>
-    <div class="faq-item"><button class="faq-q">Combien de temps pour recevoir l'estimation ?<span class="faq-icon">+</span></button><div class="faq-a">Dans les 24 heures ouvrables suivant votre demande. En période de forte demande, un délai de 48 h peut s'appliquer — on t'en informe.</div></div>
-    <div class="faq-item"><button class="faq-q">Mes photos doivent-elles être professionnelles ?<span class="faq-icon">+</span></button><div class="faq-a">Non. Des photos prises avec ton téléphone depuis le sol suffisent largement. L'important c'est d'avoir les 4 côtés de la maison et les zones problématiques si applicable.</div></div>
+    <div class="faq-item"><button class="faq-q">L'estimation est-elle vraiment gratuite ?<span class="faq-icon">+</span></button><div class="faq-a">100 % gratuit, sans condition. Aucune carte de crédit, aucun engagement, aucune pression de suivi. On vous envoie un chiffre — vous décidez.</div></div>
+    <div class="faq-item"><button class="faq-q">Combien de temps pour recevoir l'estimation ?<span class="faq-icon">+</span></button><div class="faq-a">Dans les 24 heures ouvrables suivant votre demande. En période de forte demande, un délai de 48 h peut s'appliquer — on vous en informe.</div></div>
+    <div class="faq-item"><button class="faq-q">Mes photos doivent-elles être professionnelles ?<span class="faq-icon">+</span></button><div class="faq-a">Non. Des photos prises avec votre téléphone depuis le sol suffisent largement. L'important c'est d'avoir les 4 côtés de la maison et les zones problématiques si applicable.</div></div>
     <div class="faq-item"><button class="faq-q">Le prix final peut-il changer par rapport à l'estimation ?<span class="faq-icon">+</span></button><div class="faq-a">Nous nous engageons à ce que l'estimation soit le chiffre de référence. Le seul ajustement possible : des anomalies structurelles découvertes à la dépose et non visibles sur les photos ou satellite.</div></div>
-    <div class="faq-item"><button class="faq-q">Servez-vous ma région ?<span class="faq-icon">+</span></button><div class="faq-a">Tout le Grand Montréal : Montréal, Laval, Rive-Sud, Terrebonne, Lanaudière. Un doute ? Envoie votre demande — on confirme par retour.</div></div>
+    <div class="faq-item"><button class="faq-q">Servez-vous ma région ?<span class="faq-icon">+</span></button><div class="faq-a">Tout le Grand Montréal : Montréal, Laval, Rive-Sud, Terrebonne, Lanaudière. Un doute ? Envoyez votre demande — on confirme par retour.</div></div>
   </div>
 </div></section>
 
@@ -1227,7 +1233,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <div class="ti"><strong>Certifié BP</strong>CertainTeed — certification officielle</div>
     <div class="ti"><strong>Estimation satellite</strong>Précision sans déplacement</div>
     <div class="ti"><strong>RBQ 5684-1091-01</strong>Entrepreneur licencié</div>
-    <div class="ti"><strong>Assuré RCG</strong>votre maison est protégée</div>
+    <div class="ti"><strong>Assuré RCG</strong>Votre maison est protégée</div>
   </div>
 </div>
 
@@ -1235,7 +1241,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
   <div class="contact-grid">
     <div>
       <div class="eyebrow">Nos coordonnées</div>
-      <h2 class="sh">Rejoins-nous<br><span class="r">directement</span></h2>
+      <h2 class="sh">Contactez-nous<br><span class="r">directement</span></h2>
       <p class="lead" style="margin-bottom:36px;">Appelle, écris ou remplis le formulaire. Réponse dans les 24 heures ouvrables.</p>
       <div class="ci"><div class="ci-ico">T</div><div><div class="ci-label">Téléphone</div><div class="ci-val"><a href="tel:5146923520">514-692-3520</a></div><div class="ci-sub">Lun–Ven 8h–18h · Message 24/7</div></div></div>
       <div class="ci"><div class="ci-ico">@</div><div><div class="ci-label">Courriel</div><div class="ci-val"><a href="mailto:info@couvreurrenaultexpert.com">info@couvreurrenaultexpert.com</a></div><div class="ci-sub">Réponse sous 24 heures ouvrables</div></div></div>
@@ -1281,7 +1287,7 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
           <option>Autre</option>
         </select>
       </div>
-      <div class="fg"><label>Message</label><textarea placeholder="Décris votre projet ou pose une question..."></textarea></div>
+      <div class="fg"><label>Message</label><textarea placeholder="Décrivez votre projet ou posez une question..."></textarea></div>
       <button class="btn btn-r btn-full">Envoyer ma demande d'estimation</button>
       <p style="text-align:center;font-size:.73rem;color:var(--G);margin-top:10px;">100 % gratuit &middot; Aucun engagement &middot; Réponse sous 24 h</p>
     </div>
@@ -1291,12 +1297,12 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
 <section class="process-dark" style="padding:72px 5%;">
   <div class="wrap">
     <div class="eyebrow v">Ce qui se passe ensuite</div>
-    <h2 class="sh w">Après ton message,<br><span class="r">voici la suite</span></h2>
+    <h2 class="sh w">Après votre message,<br><span class="r">voici la suite</span></h2>
     <div class="steps">
-      <div class="step"><div class="step-n">1</div><div class="step-h">Tu envoies votre demande</div><p class="step-p">Formulaire, téléphone ou courriel.</p></div>
-      <div class="step"><div class="step-n">2</div><div class="step-h">On te répond en 24 h</div><p class="step-p">Un couvreur certifié directement. Pas un intermédiaire.</p></div>
+      <div class="step"><div class="step-n">1</div><div class="step-h">Vous envoyez votre demande</div><p class="step-p">Formulaire, téléphone ou courriel.</p></div>
+      <div class="step"><div class="step-n">2</div><div class="step-h">On vous répond en 24 h</div><p class="step-p">Un couvreur certifié directement. Pas un intermédiaire.</p></div>
       <div class="step"><div class="step-n">3</div><div class="step-h">Estimation détaillée</div><p class="step-p">Analyse satellite et fourchette de prix précise.</p></div>
-      <div class="step"><div class="step-n">4</div><div class="step-h">Tu décides librement</div><p class="step-p">Aucune pression. Tu avances quand tu es prêt.</p></div>
+      <div class="step"><div class="step-n">4</div><div class="step-h">Vous décidez librement</div><p class="step-p">Aucune pression. Vous avancez quand vous êtes prêt.</p></div>
     </div>
   </div>
 </section></div>
@@ -1349,6 +1355,8 @@ footer{background:var(--N);padding:64px 5% 28px;border-top:3px solid var(--R);}
     <span>Couvreur certifié APCHQ &middot; Montréal &middot; Laval &middot; Rive-Sud &middot; Lanaudière</span>
   </div>
 </footer>
+
+<div class="mob-phone"><a href="tel:5146923520">&#128222; 514-692-3520 &mdash; Estimation gratuite</a></div>
 
 <script>
 // ── NAVIGATION ────────────────────────────────────
@@ -1436,7 +1444,7 @@ function goStep(n) {
   if (n === 3) {
     if (estMethod === 'adresse') {
       if (!document.getElementById('est-adresse').value.trim()) {
-        alert("Entre l'adresse complète de ta propriété."); return;
+        alert("Veuillez entrer l'adresse complète de votre propriété."); return;
       }
       if (!document.getElementById('est-type-proj').value) {
         alert("Sélectionne le type de projet."); return;
@@ -1498,8 +1506,8 @@ function goStep(n) {
 }
 
 function submitEstim() {
-  if (!document.getElementById('est-prenom').value.trim()) { alert("Entre ton prénom."); return; }
-  if (!document.getElementById('est-tel').value.trim()) { alert("Entre ton numéro de téléphone."); return; }
+  if (!document.getElementById('est-prenom').value.trim()) { alert("Veuillez entrer votre prénom."); return; }
+  if (!document.getElementById('est-tel').value.trim()) { alert("Veuillez entrer votre numéro de téléphone."); return; }
   if (!document.getElementById('est-email').value.trim()) { alert("Entre votre adresse courriel."); return; }
   if (!document.getElementById('est-consent').checked) { alert("Accepte d'être contacté(e) pour recevoir votre estimation."); return; }
 
