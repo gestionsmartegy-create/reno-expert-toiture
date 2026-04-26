@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Autres projets dans ce dossier
+backend/
+brunette/
+brunette
+shegoals/
+reno_site_extracted/
+.claude/
+
+# Scripts Python divers
+serve.py
+serve_brunette.py
+export_pdf.py
+wp_agent.py
+start_vote.sh
+requirements_agent.txt
+
+# Fichiers divers
+ophair.db
+mockup.html
+logo.png
+OPHAIR_Passation_Dev.docx
+~$*
